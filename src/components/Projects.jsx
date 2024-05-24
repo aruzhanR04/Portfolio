@@ -25,7 +25,7 @@ export const Projects = () => {
                 <h2>Проекты</h2>
                 <p>В этом разделе, вы можете ознакомиться с примерами работ!<br></br> А так же узнать как со мной связаться!</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb5 justify-content-center align-items-center" id="pills-tab">
+                  {/* <Nav variant="pills" className="nav-pills mb5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
                       <Nav.Link eventKey="first">1</Nav.Link>
                     </Nav.Item>
@@ -35,7 +35,7 @@ export const Projects = () => {
                     <Nav.Item>
                       <Nav.Link eventKey="third">3</Nav.Link>
                     </Nav.Item>
-                  </Nav>
+                  </Nav> */}
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
