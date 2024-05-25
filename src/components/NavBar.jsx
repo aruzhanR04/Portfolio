@@ -1,18 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from "react-bootstrap";
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
-import React, { useContext } from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../reducers/themeSlice';
 
-export const NavBar = () => {
-
+const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const theme = useSelector((state) => state.theme.theme);
@@ -30,11 +26,11 @@ export const NavBar = () => {
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  }, []);
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
-  }
+  };
 
   return (
     <Router>
@@ -66,5 +62,7 @@ export const NavBar = () => {
         </Container>
       </Navbar>
     </Router>
-  )
-}
+  );
+};
+
+export default NavBar;

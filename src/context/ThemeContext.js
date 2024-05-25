@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 
 export const ThemeContext = createContext();
 
-export const ThemeContextProvider = ({ children }) => {
+const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
@@ -15,3 +15,5 @@ export const ThemeContextProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export default ThemeContextProvider;

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { useSelector, useDispatch } from 'react-redux';
-import { ProjectCard } from "./ProjectCard";
+import ProjectCard from "./ProjectCard";
 import { setProjects, addProject, removeProject } from '../reducers/projectsSlice';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-export const Projects = () => {
+const Projects = () => {
   const projects = useSelector((state) => state.projects.projects);
   const dispatch = useDispatch();
 
@@ -51,12 +51,6 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="second">
-                      <p>Здесь могут быть другие проекты.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Здесь могут быть другие проекты.</p>
-                    </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
               </div>}
@@ -65,5 +59,7 @@ export const Projects = () => {
         </Row>
       </Container>
     </section>
-  )
-}
+  );
+};
+
+export default Projects;

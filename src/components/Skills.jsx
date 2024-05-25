@@ -1,5 +1,6 @@
 import React from 'react';
-export const Skills = () => {
+
+const Skills = () => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -32,5 +33,7 @@ export const Skills = () => {
             </div>
         </div>
     </section>
-  )
-}
+  );
+};
+
+export default Skills;

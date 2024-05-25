@@ -1,28 +1,27 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-export const Contact = () => {
+const Contact = () => {
   const formInitialDetails = {
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
     message: ''
-  }
+  };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Отправить');
   const [status, setStatus] = useState({});
 
   const onFormUpdate = (category, value) => {
-      setFormDetails({
-        ...formDetails,
-        [category]: value
-      })
-  }
+    setFormDetails({
+      ...formDetails,
+      [category]: value
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,10 +36,10 @@ export const Contact = () => {
     setButtonText("Send");
     let result = await response.json();
     setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
+    if (result.code === 200) {
+      setStatus({ success: true, message: 'Message sent successfully' });
     } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+      setStatus({ success: false, message: 'Something went wrong, please try again later.' });
     }
   };
 
@@ -66,7 +65,7 @@ export const Contact = () => {
                       <input type="text" value={formDetails.firstName} placeholder="Имя" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lasttName} placeholder="Фамилия" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
+                      <input type="text" value={formDetails.lastName} placeholder="Фамилия" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
                     </Col>
                     <Col size={12} sm={6} className="px-1">
                       <input type="email" value={formDetails.email} placeholder="Почта" onChange={(e) => onFormUpdate('email', e.target.value)} />
@@ -92,5 +91,7 @@ export const Contact = () => {
         </Row>
       </Container>
     </section>
-  )
-}
+  );
+};
+
+export default Contact;
